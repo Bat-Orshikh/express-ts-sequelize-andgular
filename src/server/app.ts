@@ -1,10 +1,11 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import * as bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import { Routers } from "./routes";
 import cors from "cors";
 import { morganOption } from "./logger/index";
+import * as path from "path";
 
 class App {
   public app: express.Application;
@@ -19,6 +20,7 @@ class App {
   }
 
   private config(): void {
+    this.app.use(express.static(path.join(__dirname, '../client')));
     this.app.use(morgan("combined", morganOption));
     this.app.use(helmet());
     this.app.use(cors());
@@ -30,6 +32,11 @@ class App {
 
     // add routes
     this.app.use("/", this.routers.routes());
+
+    // SPA: Catch all other routes and return the index file
+    this.app.get('*', (req: Request, res: Response) => {
+      return res.sendFile(path.join(__dirname, '../client/index.html'));
+    });
   }
   private errorHandling() {
     // this.app.use()
