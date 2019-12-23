@@ -49,9 +49,9 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 | `build`                   | Full build. Runs ALL build tasks (`build-ts`, `lint`, `ng-build` and `ng-lint` )                    |
 | `e2e`                     | Runs frontend End-To-End test                                                                       |
 | `start`                   | Start server with development env. Can be invoked with `npm start`                                  |
-| `start:test`                   | Start server with test env.                                                                    |
-| `start:stage`                   | Start server with stage env.                                                                  |
-| `start:prod`                   | Start server with production env.                                                              |
+| `start:test`              | Start server with test env.                                                                         |
+| `start:stage`             | Start server with stage env.                                                                        |
+| `start:prod`              | Start server with production env.                                                                   |
 | `watch-node`              | Runs node with nodemon so the process restarts if it crashes. Used in the main watch task           |
 | `watch`                   | Runs all watch tasks (TypeScript, Angular, Express). Use this if you're not touching static assets. |
 | `test`                    |                                                                                                     |
