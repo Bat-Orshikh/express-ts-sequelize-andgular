@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/client",
+    "outDir": "../out-tsc/spec",
     "types": [
       "jasmine",
       "node"
@@ -12,7 +12,7 @@
     "polyfills.ts"
   ],
   "include": [
-    "src/client/**/*.spec.ts",
-    "src/client/**/*.d.ts"
+    "test/*.spec.ts",
+    "**/*.d.ts"
   ]
 }

@@ -28,7 +28,8 @@
               "src/client/assets"
             ],
             "styles": [
-              "src/client/styles.scss"
+              "src/client/styles.scss",
+              "src/client/styles-pre-loader.scss"
             ],
             "scripts": []
           },
@@ -93,9 +94,13 @@
               "src/client/assets"
             ],
             "styles": [
-              "src/client/styles.scss"
+              "src/client/styles.scss",
+              "src/client/styles-pre-loader.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverageExclude": [
+              "**/*.stub.ts"
+            ]
           }
         },
         "lint": {
@@ -124,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "yubista"
 }
