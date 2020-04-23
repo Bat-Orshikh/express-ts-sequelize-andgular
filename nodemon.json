@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".vscode",
+    ".git",
+    "build",
+    "src/client/assets"
+  ],
+  "verbose": true,
+  "ext": "html,css,scss,js,json"
+}
