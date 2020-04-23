@@ -1,5 +1,12 @@
 {
   "eslint.validate": [
     "typescript"
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.insertFinalNewline": false,
+  "[json]": {
+    "files.insertFinalNewline": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

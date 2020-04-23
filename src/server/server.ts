@@ -1,13 +1,19 @@
 import app from "./app";
+import { logger } from "./logger";
+import { Database } from "./models";
 
 /**
  * Start Express server.
  */
-app.listen(process.env.PORT, () => {
-  console.log(
-    "  App is running at http://localhost:%d in %s mode",
-    process.env.PORT,
-    process.env.NODE_ENV
-  );
-  console.log("  Press CTRL-C to stop\n");
-});
+
+Database.getInstance()
+  .getConnection()
+  .authenticate()
+  .then(() => {
+    logger.info("Connected to Database server!");
+
+    app.listen(process.env.PORT, () => {
+      logger.info(`  App is running at http://localhost:${process.env.PORT} in ${process.env.NODE_ENV} mode`);
+      logger.info("  Press CTRL-C to stop\n");
+    });
+  }).catch((error: Error) => console.log(error));

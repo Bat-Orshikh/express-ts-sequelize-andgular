@@ -1,2 +1,5 @@
 node_modules/*
 dist/*
+src/server/config/*
+src/client/test/coverage/*
+src/client/e2e/*

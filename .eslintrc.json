@@ -22,6 +22,15 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
     "max-len": [
       "error",
       {

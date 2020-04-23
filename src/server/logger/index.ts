@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import path from "path";
 import { Options } from 'morgan';
 
-const dirLogs = path.join(__dirname, '../logs');
+const dirLogs = path.join(__dirname, '../../../logs');
 if (!fs.existsSync(dirLogs)) {
   fs.mkdirSync(dirLogs);
 }
@@ -16,10 +16,22 @@ const options = {
     maxsize: 5242880, // 5MB
     maxFiles: 5,
     colorize: false,
+    format: winston.format.combine(
+      winston.format.timestamp({
+        format: 'YYYY-MM-DD hh:mm:ss A ZZ'
+      }),
+      winston.format.json()
+    )
   },
   exception: {
     level: "error",
-    filename: dirLogs + "/error.log"
+    filename: dirLogs + "/error.log",
+    format: winston.format.combine(
+      winston.format.timestamp({
+        format: 'YYYY-MM-DD hh:mm:ss A ZZ'
+      }),
+      winston.format.json()
+    )
   }
 };
 
@@ -43,7 +55,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export const morganOption: Options = {
   stream: {
-    write: function (message: string) {
+    write: function (message: string): void {
       logger.info(message.trim());
     }
   }

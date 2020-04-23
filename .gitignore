@@ -81,6 +81,10 @@ typings/
 .env.dev
 .env.test
 
+# ignore angular client environment files
+environment.prod.ts
+environment.ts
+
 #####
 # OS X temporary files
 #
