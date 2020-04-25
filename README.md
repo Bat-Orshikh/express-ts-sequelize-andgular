@@ -1,4 +1,12 @@
-# YubiSta project
+# Express-Typescript-Sequelize-Angular project
+
+Backend:
+    Framework: Express - Node.js
+    Lang: Typescript 3.7
+
+    Node version: 12.14
+    NPM version: 6.13
+Frontend: Angular framework v.9
 
 ## Project Structure
 
