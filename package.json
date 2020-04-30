@@ -1,7 +1,7 @@
 {
-  "name": "yubista2020",
+  "name": "express-ts-sequelize-angular",
   "version": "1.0.0",
-  "description": "This is our company's brand new project called YubiSta and it has been developed in Mongolian branch.",
+  "description": "This is a boilerplate project for express-ts-sequelize-angular stack",
   "scripts": {
     "ng": "ng",
     "ng-test": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
@@ -33,9 +33,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "eysdevpro2@eysdevpro2.git.backlog.jp:/FIRST/yubista2020.git"
+    "url": "https://github.com/Bat-Orshikh/express-ts-sequelize-angular.git"
   },
-  "author": "Undarmaa Baatarchuluun, Purevdondov Enkhbayar, Bat-Orshikh Baavgaikhuu",
+  "author": "Undarmaa Baatarchuluun, Bat-Orshikh Baavgaikhuu",
   "license": "ISC",
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",

@@ -1,0 +1,31 @@
+@import "./hover.scss";
+
+@mixin circle-button(
+  $iconUrl,
+  $iconWidth,
+  $iconHeight,
+  $radius: 1.5rem,
+  $background-x: center,
+  $background-y: center,
+  $bgColor: #ffffff,
+  $bgHoverColor: #ededed,
+  $borderColor: transparent,
+  $outline: 0
+) {
+  border-radius: $radius;
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16);
+  height: $radius * 2;
+  width: $radius * 2;
+  border-color: $borderColor;
+  background: url($iconUrl) no-repeat $bgColor;
+  background-size: $iconWidth $iconHeight;
+  background-position: $background-x $background-y;
+  padding: 0;
+  border: none;
+  &:focus {
+    outline: $outline;
+  }
+  @include hover {
+    background-color: $bgHoverColor;
+  }
+}

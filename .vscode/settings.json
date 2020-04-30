@@ -8,5 +8,8 @@
   "[json]": {
     "files.insertFinalNewline": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.insertSpaces": true
 }

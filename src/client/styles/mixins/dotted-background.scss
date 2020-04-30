@@ -1,0 +1,6 @@
+@mixin dotted-background($bgColor, $dotSpace, $dotSize, $dotTopColor, $dotBottomColor) {
+  background: linear-gradient(90deg, $bgColor ($dotSpace - $dotSize), transparent 1%) center,
+    linear-gradient(#ffffff ($dotSpace - $dotSize), transparent 1%) center,
+    linear-gradient($dotBottomColor, $dotTopColor);
+  background-size: $dotSpace $dotSpace;
+}

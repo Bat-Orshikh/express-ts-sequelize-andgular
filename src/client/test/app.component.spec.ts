@@ -20,9 +20,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'yubista'`, () => {
+  it(`should have as title 'express-ts-sequelize-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('yubista');
+    expect(app.title).toEqual('express-ts-sequelize-angular');
   });
 });

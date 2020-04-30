@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sample-web-stack": {
+    "express-ts-sequelize-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -22,14 +22,16 @@
             "main": "src/client/main.ts",
             "polyfills": "src/client/polyfills.ts",
             "tsConfig": "src/client/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/client/favicon.ico",
               "src/client/assets"
             ],
             "styles": [
-              "src/client/styles.scss",
-              "src/client/styles-pre-loader.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/client/styles/styles.scss",
+              "src/client/styles/styles-pre-loader.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -46,7 +48,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -58,8 +59,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "60kb",
+                  "maximumError": "100kb"
                 }
               ]
             }
@@ -68,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sample-web-stack:build"
+            "browserTarget": "express-ts-sequelize-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sample-web-stack:build:production"
+              "browserTarget": "express-ts-sequelize-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sample-web-stack:build"
+            "browserTarget": "express-ts-sequelize-angular:build"
           }
         },
         "test": {
@@ -90,12 +91,13 @@
             "tsConfig": "src/client/tsconfig.spec.json",
             "karmaConfig": "src/client/karma.conf.js",
             "assets": [
-              "src/client/favicon.ico",
               "src/client/assets"
             ],
             "styles": [
-              "src/client/styles.scss",
-              "src/client/styles-pre-loader.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/client/styles/styles.scss",
+              "src/client/styles/styles-pre-loader.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [],
             "codeCoverageExclude": [
@@ -103,33 +105,20 @@
             ]
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/client/tsconfig.app.json",
-              "src/client/tsconfig.spec.json",
-              "src/client/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "src/client/e2e/protractor.conf.js",
-            "devServerTarget": "sample-web-stack:serve"
+            "devServerTarget": "express-ts-sequelize-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sample-web-stack:serve:production"
+              "devServerTarget": "express-ts-sequelize-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "sample-web-stack"
+  "defaultProject": "express-ts-sequelize-angular"
 }

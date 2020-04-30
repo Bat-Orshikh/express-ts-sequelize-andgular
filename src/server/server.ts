@@ -12,8 +12,17 @@ Database.getInstance()
   .then(() => {
     logger.info("Connected to Database server!");
 
-    app.listen(process.env.PORT, () => {
-      logger.info(`  App is running at http://localhost:${process.env.PORT} in ${process.env.NODE_ENV} mode`);
-      logger.info("  Press CTRL-C to stop\n");
+    return new Promise((resolve, reject) => {
+      app.listen(process.env.PORT, () => {
+        return resolve("OK");
+      }).on("error", async (error) => {
+        return reject(error);
+      });
     });
-  }).catch((error: Error) => console.log(error));
+  })
+  .then(() => {
+    logger.info(`  App is running at http://localhost:${process.env.PORT} in ${process.env.NODE_ENV} mode`);
+    logger.info("  Press CTRL-C to stop\n");
+  }).catch((error: Error) => {
+    logger.error(error);
+  });

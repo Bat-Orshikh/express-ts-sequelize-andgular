@@ -4,6 +4,8 @@
     ".vscode",
     ".git",
     "build",
+    "dist/client",
+    "src/client",
     "src/client/assets"
   ],
   "verbose": true,
